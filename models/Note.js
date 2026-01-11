@@ -10,6 +10,22 @@ const noteSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    tags: {
+      type: [String],
+      default: [],
+    },
+    pinned: {
+      type: Boolean,
+      default: false,
+    },
+    archived: {
+      type: Boolean,
+      default: false,
+    },
+    color: {
+      type: String,
+      default: "#ffffff",
+    },
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
